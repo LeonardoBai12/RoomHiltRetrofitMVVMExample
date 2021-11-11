@@ -8,12 +8,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import io.lb.roomexample.R
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var recyclerViewAdapter: MainAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_RoomExample)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -31,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         viewModel.loadRepositories().observe(this) {
-            if(!it.isNullOrEmpty()) {
+            if(it != null) {
                 recyclerViewAdapter.updateList(it)
                 recyclerViewAdapter.notifyDataSetChanged()
             } else {
@@ -39,6 +44,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        viewModel.makeApiCall()
+        CoroutineScope(IO).launch {
+            viewModel.makeApiCall()
+        }.invokeOnCompletion {
+            viewModel.loadRepositories()
+        }
     }
 }
