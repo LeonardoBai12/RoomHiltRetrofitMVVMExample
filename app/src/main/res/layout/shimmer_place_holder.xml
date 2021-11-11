@@ -4,166 +4,45 @@
     android:id="@+id/cvMainAccount"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="4dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginTop="4dp"
-    app:cardBackgroundColor="@color/white"
+    android:layout_margin="4dp"
     app:cardCornerRadius="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/lblAccountCode"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+    <ImageView
+            android:id="@+id/ivRepositoryOwner"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
             android:background="@color/colorGrey"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/lblAccountCompanyName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/lblAccountCompanyName" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/tvAccountCode"
+            android:id="@+id/tvRepositoryName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
             android:background="@color/colorGrey"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@id/lblAccountCode"
-            app:layout_constraintStart_toStartOf="@id/lblAccountCode"
-            app:layout_constraintTop_toTopOf="@id/tvAccountCompanyName"
-            app:layout_constraintBottom_toBottomOf="@id/tvAccountCompanyName"/>
-
-        <TextView
-            android:id="@+id/lblAccountCityState"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/lblAccountCpfCnpj"
-            app:layout_constraintStart_toStartOf="@+id/lblAccountCode"
-            app:layout_constraintTop_toTopOf="@id/lblAccountCpfCnpj"
-            app:layout_constraintEnd_toEndOf="@+id/lblAccountCode"/>
-
-        <TextView
-            android:id="@+id/tvAccountCityState"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/tvAccountCpfCnpj"
-            app:layout_constraintEnd_toEndOf="@+id/lblAccountCityState"
-            app:layout_constraintStart_toStartOf="@id/lblAccountCityState"
-            app:layout_constraintTop_toTopOf="@id/tvAccountCpfCnpj" />
-
-        <TextView
-            android:id="@+id/lblAccountCompanyName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/tvAccountCompanyName"
-            app:layout_constraintEnd_toStartOf="@id/lblAccountTradingName"
-            app:layout_constraintStart_toEndOf="@id/lblAccountCode"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvAccountCompanyName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@id/lblAccountCompanyName"
-            app:layout_constraintTop_toBottomOf="@id/lblAccountCompanyName"
-            app:layout_constraintBottom_toTopOf="@id/lblAccountCpfCnpj"
-            app:layout_constraintEnd_toEndOf="@id/lblAccountCompanyName"/>
-
-        <TextView
-            android:id="@+id/lblAccountCpfCnpj"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/tvAccountCpfCnpj"
-            app:layout_constraintEnd_toEndOf="@+id/lblAccountCompanyName"
-            app:layout_constraintStart_toStartOf="@+id/lblAccountCompanyName"
-            app:layout_constraintTop_toBottomOf="@id/tvAccountCompanyName" />
-
-        <TextView
-            android:id="@+id/tvAccountCpfCnpj"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/lblAccountCpfCnpj"
-            app:layout_constraintStart_toStartOf="@+id/lblAccountCpfCnpj"
-            app:layout_constraintTop_toBottomOf="@id/lblAccountCpfCnpj" />
-
-        <TextView
-            android:id="@+id/lblAccountTradingName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/lblAccountCompanyName"
-            app:layout_constraintEnd_toStartOf="@id/ivAccountIcon"
-            app:layout_constraintStart_toEndOf="@id/lblAccountCompanyName"
-            app:layout_constraintTop_toTopOf="@id/lblAccountCompanyName" />
-
-        <TextView
-            android:id="@+id/tvAccountTradingName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@id/lblAccountTradingName"
-            app:layout_constraintEnd_toEndOf="@id/lblAccountTradingName"
-            app:layout_constraintTop_toTopOf="@id/tvAccountCompanyName"
-            app:layout_constraintBottom_toBottomOf="@id/tvAccountCompanyName"/>
-
-        <TextView
-            android:id="@+id/lblAccountCreditLimit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/lblAccountCpfCnpj"
-            app:layout_constraintEnd_toEndOf="@+id/tvAccountTradingName"
-            app:layout_constraintStart_toStartOf="@+id/tvAccountTradingName"
-            app:layout_constraintTop_toTopOf="@+id/lblAccountCpfCnpj" />
-
-        <TextView
-            android:id="@+id/tvAccountCreditLimit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/tvAccountCpfCnpj"
-            app:layout_constraintEnd_toEndOf="@+id/lblAccountCreditLimit"
-            app:layout_constraintStart_toStartOf="@+id/lblAccountCreditLimit"
-            app:layout_constraintTop_toTopOf="@id/tvAccountCpfCnpj" />
-
-        <ImageView
-            android:id="@+id/ivAccountIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorGrey"
-            app:layout_constraintStart_toEndOf="@+id/tvAccountCreditLimit"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivRepositoryOwner"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/ivRepositoryOwner"/>
+
+        <TextView
+            android:id="@+id/tvRepositoryDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:maxLines="3"
+            android:background="@color/colorGrey"
+            app:layout_constraintStart_toStartOf="@+id/tvRepositoryName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRepositoryName"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
