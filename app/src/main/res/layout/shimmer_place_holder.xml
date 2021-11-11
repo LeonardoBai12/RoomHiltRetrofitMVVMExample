@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMainAccount"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    app:cardBackgroundColor="@color/background_card"
     app:cardCornerRadius="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,11 +12,12 @@
         android:layout_height="wrap_content"
         android:padding="10dp">
 
-        <ImageView
+    <ImageView
             android:id="@+id/ivRepositoryOwner"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
+            android:background="@color/colorGrey"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -26,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:background="@color/colorGrey"
             app:layout_constraintStart_toEndOf="@+id/ivRepositoryOwner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ivRepositoryOwner"/>
@@ -38,7 +39,7 @@
             android:layout_marginTop="5dp"
             android:textSize="16sp"
             android:maxLines="3"
-            android:textColor="@color/black"
+            android:background="@color/colorGrey"
             app:layout_constraintStart_toStartOf="@+id/tvRepositoryName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvRepositoryName"/>
