@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 recyclerViewAdapter.updateList(it)
                 recyclerViewAdapter.notifyDataSetChanged()
             } else {
-                Toast.makeText(this, "error in getting data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Something went wrong!", Toast.LENGTH_SHORT).show()
             }
         }
 
