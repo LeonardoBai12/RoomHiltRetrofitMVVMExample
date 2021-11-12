@@ -65,11 +65,12 @@ class MainActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             disableShimmer()
-            if (!it.isNullOrEmpty()) {
-                rvRepositories.visibility = View.VISIBLE
-            } else {
-                rvRepositories.visibility = View.GONE
-            }
+            rvRepositories.visibility =
+                if (!it.isNullOrEmpty()) {
+                    View.VISIBLE
+                } else {
+                    View.GONE
+                }
         }, 1500)
     }
 
