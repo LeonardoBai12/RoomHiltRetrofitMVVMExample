@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import io.lb.roomexample.R
 import io.lb.roomexample.model.RepositoryData
 import kotlinx.android.synthetic.main.row_repository.view.*
@@ -31,9 +33,12 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
         holder.tvRepositoryName.text = data?.name
         holder.tvRepositoryDescription.text = data?.description
 
-        Glide.with(holder.ivRepositoryOwner)
-            .load(data?.owner?.avatarUrl)
-            .into(holder.ivRepositoryOwner)
+        val requestOptions = RequestOptions.fitCenterTransform()
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .override(holder.ivRepositoryOwner.width,holder.ivRepositoryOwner.height)
+
+        Glide.with(holder.ivRepositoryOwner).load(data?.owner?.avatarUrl)
+            .apply(requestOptions).into(holder.ivRepositoryOwner)
     }
 
     fun getFilter(): Filter {
